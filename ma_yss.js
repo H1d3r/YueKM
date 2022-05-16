@@ -83,7 +83,12 @@ var disDateTime = Date.parse(setDateTime()) / 1000;
 console.log(goodtime(new Date(disDateTime * 1000), false));
 console.log(goodtime(new Date((get0(disDateTime) - 4 * 3600 - 25 * 60 - 35) * 1000)));
 
+// var body = {
+//     "data": { records: [{ "显示时间": "", "申报时间": "", "检测日期": "", "采样日期": "" }, { "显示时间": "", "申报时间": "", "检测日期": "", "采样日期": "" }] },
+// };
+
 var body = JSON.parse($response.body);
+
 try {
     body.data.records[0]["显示时间"] = goodtime(new Date(disDateTime * 1000), false);
     body.data.records[0]["申报时间"] = body.data.records[0]["检测日期"] = goodtime(new Date(disDateTime * 1000), false);
@@ -99,6 +104,7 @@ try {
 } catch (err) {
     console.log("Record 2 没有数据");
 }
-console.log(goodtime(new Date(disDateTime * 1000), false));
-console.log(goodtime(new Date((get0(disDateTime) - 2.8 * 3600 - 25 * 55 - 30) * 1000)));
+// console.log(goodtime(new Date(disDateTime * 1000), false));
+// console.log(goodtime(new Date((get0(disDateTime) - 2.8 * 3600 - 25 * 55 - 30) * 1000)));
+console.log(JSON.stringify(body));
 $done({ body: JSON.stringify(body) });
