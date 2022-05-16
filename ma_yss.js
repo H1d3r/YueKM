@@ -74,14 +74,10 @@ function setDateTime() {
     date.setDate(date.getDate() - setdays());
     date.setHours(setHour());
     date.setMinutes(setMinutes());
-    return date.Format('yyyy-MM-dd hh:mm:ss');
+    return date.valueOf(); //date.Format('yyyy-MM-dd hh:mm:ss');
 }
-console.log(setDateTime());
-console.log(Date.parse(setDateTime()) / 1000);
-var disDateTime = Date.parse(setDateTime()) / 1000;
-
-console.log(goodtime(new Date(disDateTime * 1000), false));
-console.log(goodtime(new Date((get0(disDateTime) - 4 * 3600 - 25 * 60 - 35) * 1000)));
+var disDateTime = setDateTime() / 1000; //(new Date(setDateTime())).valueOf() / 1000;
+console.log(disDateTime);
 
 // var body = {
 //     "data": { records: [{ "显示时间": "", "申报时间": "", "检测日期": "", "采样日期": "" }, { "显示时间": "", "申报时间": "", "检测日期": "", "采样日期": "" }] },
@@ -99,12 +95,11 @@ try {
 try {
     disDateTime = disDateTime - 86400 * 2.8 + setMinutes() * 58;
     body.data.records[1]["显示时间"] = goodtime(new Date(disDateTime * 1000), false);
-    body.data.records[1]["申报时间"] = body.data.records[0]["检测日期"] = goodtime(new Date(disDateTime * 1000), false);
+    body.data.records[1]["申报时间"] = body.data.records[1]["检测日期"] = goodtime(new Date(disDateTime * 1000), false);
     body.data.records[1]["采样日期"] = goodtime(new Date((get0(disDateTime) - 2.8 * 3600 - 25 * 55 - 30) * 1000));
 } catch (err) {
     console.log("Record 2 没有数据");
 }
 // console.log(goodtime(new Date(disDateTime * 1000), false));
 // console.log(goodtime(new Date((get0(disDateTime) - 2.8 * 3600 - 25 * 55 - 30) * 1000)));
-console.log(JSON.stringify(body));
 $done({ body: JSON.stringify(body) });
