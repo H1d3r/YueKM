@@ -1,0 +1,19 @@
+#!name=YueKM
+#!desc=YueKM Info Index & Daka
+
+[Script]
+YueKM_YSF = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://zwms\.gdbs\.gov\.cn\/api\/open\/r\/apiconsole\/collection\/yssh5\/yss\/call$,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://zwms\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/call,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat_Daka = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://zwms\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/daka/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_YSF_2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://zwms\.gdbs\.gov\.cn/api/open/r/apiconsole/collection/yssh5/yss/call,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_YSF_2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://zwms\.gdbs\.gov\.cn/api/open/r/apiconsole/collection/yssh5/yss/daka/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat_Index = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm1\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/call,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat_Daka = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm1\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/daka/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat_Index2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm2\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/call,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeChat_Daka2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm2\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/apiconsole/collection/opc_process/daka/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeWork_Index = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm1\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/opc_process/collection/ykmindex/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeWork_Details = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm1\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/opc_process/collection/ykmdetails/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeWork_Index2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm2\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/opc_process/collection/ykmindex/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+YueKM_WeWork_Details2 = type=http-response,script-path=https://raw.githubusercontent.com/H1d3r/YueKM/main/ma_yss.js,pattern=^https://mmykm2\.gdbs\.gov\.cn/ebus/minshengwxmp/api/r/opc_process/collection/ykmdetails/nat,max-size=0,requires-body=true,script-update-interval=24,enable=true
+[MITM]
+hostname = %APPEND% zwms.gdbs.gov.cn, mmykm1.gdbs.gov.cn, mmykm2.gdbs.gov.cn
