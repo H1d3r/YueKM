@@ -48,9 +48,13 @@ function getThedaybeforeyesterday() {
 }
 
 function setdays() {
+	var arg=2;
+	if ($argument){
+	    arg = $argument;
+	}
     var date = new Date();
     date.setDate(date.getDate());
-    var setday = parseInt(date.Format('yyyyMMdd')) % 3;
+    var setday = parseInt(date.Format('yyyyMMdd')) % arg;
     return setday;
 }
 
